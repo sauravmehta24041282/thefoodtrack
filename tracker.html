@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index2.css">
+    
+    <title>Food Order Tracking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="margin: 0; padding: 0; height: 100vh;">
+  <div class="tracker" id="tracker" style=" background-image:  url(food3.jpg); background-size: cover; height: 100vh;">
+    <h2 style=" margin-top:20px; color: black; font-weight:bold;">Track your oder</h2>
+    <div class="tracker">
+        <div class="step" style="height: 50px; width: 200px;">Order Placed</div>
+        <div class="step" style="height: 50px; width: 200px;">Preparing</div>
+        <div class="step" style="height: 50px; width: 200px;">Out for Delivery</div>
+        <div class="step" style="height: 50px; width: 200px;">Delivered</div>
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3485.344244943897!2d79.51735077454633!3d29.12503516154725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a0854e46fbbcbb%3A0xe8ad2dca724e9699!2sGraphic%20Era%20Hill%20University%2C%20Haldwani%20Campus!5e0!3m2!1sen!2sin!4v1741322476326!5m2!1sen!2sin" width="200" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <script>
+        const steps = document.querySelectorAll('.step');
+        let currentStep = 0;
+
+        function updateStatus() {
+            if (currentStep < steps.length) {
+                steps[currentStep].classList.add('active');
+                currentStep++;
+                setTimeout(updateStatus, 2000);
+            }
+        }
+
+        updateStatus();
+    </script>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
